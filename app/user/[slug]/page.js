@@ -1,5 +1,10 @@
 // app/user/[slug]/page.js
 
+import SupporterCard from "@/components/SupporterCard";
+import { IoQrCodeOutline } from "react-icons/io5";
+import { FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
 const User = async ({ params }) => {
   const slug = params.slug;
 
@@ -47,6 +52,29 @@ const User = async ({ params }) => {
             </button>
           </div>
           <button className="btn-primary manrope-font-bold">Follow</button>
+        </div>
+      </section>
+      <section>
+        <div>
+          <h1 className="manrope-font-bold mb-4 text-xl">Recent Supporter</h1>
+          <SupporterCard />
+        </div>
+      </section>
+
+      <section>
+        <div className="flex flex-col items-center gap-4">
+          <div className="share-icons-div">
+            <span className="share-icons"><FaXTwitter className="text-3xl text-white rounded-lg" /> </span>
+            <p className="text-lg manrope-font">Share on Twitter</p>
+          </div>
+          <div className="share-icons-div">
+           <span className="share-icons"><FaWhatsapp className="text-3xl text-white rounded-lg" /> </span>
+            <p className="text-lg manrope-font">Share on Whatsapp</p>
+          </div>
+          <div className="share-icons-div">
+             <span className="share-icons"><IoQrCodeOutline className="text-3xl text-white rounded-lg" /> </span>
+            <p className="text-lg manrope-font">Share with Qr Code</p>
+          </div>
         </div>
       </section>
     </div>

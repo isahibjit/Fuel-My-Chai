@@ -5,8 +5,8 @@ import { FaPeopleGroup } from "react-icons/fa6";
 
 export default function Home() {
   return (
-    <div className="min-h-[75vh] max-w-[70%] mx-auto">
-      <div className="flex my-12  gap-12  justify-around items-center ">
+    <div className="min-h-[75vh] max-w-[80%] mx-auto">
+      <div className="flex my-12 lg:flex-row flex-col  lg:gap-12 gap-8  justify-around items-center ">
         <div>
           <img
             src="background-image.png"
@@ -14,11 +14,11 @@ export default function Home() {
             alt="image of women in saree holding money above mount fuji"
           />
         </div>
-        <div className="flex flex-col gap-12">
-          <h1 className="text-6xl text-[#0F1417] tracking-tighter jakarta-font-bold">
+        <div className="flex flex-col gap-4">
+          <h1 className="lg:text-6xl text-3xl text-[#0F1417] tracking-tighter jakarta-font-bold">
             Support the creators you love
           </h1>
-          <p className="text-[#0F1417] text-2xl">
+          <p className="text-[#0F1417] xl:text-2xl text-xl">
             Fuel My Chai is the best way to support the creators you love.
             Accept simple donations, offer memberships, and so much more.
           </p>
@@ -31,8 +31,8 @@ export default function Home() {
       <div>
         <h1 className="text-2xl  font-medium ">How it Works ?</h1>
       </div>
-      <div className="flex justify-between my-4">
-        <div className="flex items-center gap-2 text-lg font-medium border border-slate-300 hover:scale-110 transition-all duration-200 cursor-pointer rounded-lg py-3  pl-4 pr-24">
+      <div className="flex lg:flex-row flex-col gap-8 justify-between my-4">
+        <div className="flex items-center gap-2 text-lg  font-medium border border-slate-300 hover:scale-110 transition-all duration-200 cursor-pointer rounded-lg py-3  pl-4 pr-24">
           <span>
             <CiMoneyBill className="text-3xl " />
           </span>
@@ -53,8 +53,8 @@ export default function Home() {
       </div>
       <div>
         <h1 className="text-2xl  font-medium ">Creators love Fuel My Chai</h1>
-        <div className="grid grid-cols-3  my-4">
-          <div className="w-[300px]">
+        <div className="grid xl:grid-cols-3 gap-8 items-center justify-center   my-4">
+          <div className="w-[300px] ">
             <img
               className="creator-img"
               src="Creators Image/girl 1.webp"
@@ -66,7 +66,7 @@ export default function Home() {
             </p>
             <p className="text-[#5C738A] text-lg">Sophia, Artist</p>
           </div>
-          <div className="w-[300px]">
+          <div className="w-[300px] ">
             <img
               className="creator-img"
               src="Creators Image/girl 2.jpg"
@@ -78,7 +78,7 @@ export default function Home() {
             </p>
             <p className="text-[#5C738A] text-lg">Christina Chang, Model</p>
           </div>{" "}
-          <div className="w-[300px]">
+          <div className="w-[300px] ">
             <img
               className="creator-img"
               src="Creators Image/girl 3.jpg"
