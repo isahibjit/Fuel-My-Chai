@@ -22,9 +22,12 @@
   font-style: normal;
 }
 .btn-primary{
-  @apply bg-[#DBE8F2] hover:bg-[#cce2f3] transition-all duration-200 py-2 px-6 rounded-full cursor-pointer
+  @apply bg-[#DBE8F2] hover:bg-[#cce2f3] transition-all duration-200 py-4 px-8 rounded-full cursor-pointer
 }
 .btn-secondary{
-  @apply bg-[#EBEDF2] hover:bg-[#daefff] transition-all duration-200 py-2 px-6 rounded-full cursor-pointer
+  @apply bg-[#EBEDF2] hover:bg-[#daefff] transition-all duration-200 py-4 px-8 rounded-full cursor-pointer
 }
 
+.creator-img{
+  @apply w-[301px] h-[301px] object-cover rounded-lg hover:scale-110 transition-all duration-300 cursor-pointer
+}
