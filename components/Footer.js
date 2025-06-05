@@ -5,9 +5,9 @@ import { FaFacebookF } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className='jakarta-font flex flex-col gap-5 p-12 mx-auto text-xl text-[#5C738A] max-w-[80%]'>
+    <footer className='jakarta-font flex flex-col gap-5 p-12 mx-auto md:text-xl text-lg text-[#5C738A] md:max-w-[80%]'>
         <div>
-            <ul className='flex justify-between mx-8 gap-8'>
+            <ul className='flex justify-between mx-8 items-center  w-full gap-8'>
                 <li className='cursor-pointer hover:text-[#44494e]'>About</li>
                 <li className='cursor-pointer hover:text-[#44494e]'>Contact</li>
                 <li className='cursor-pointer hover:text-[#44494e]'>Privacy Policy</li>

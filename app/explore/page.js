@@ -2,7 +2,7 @@ import React from "react";
 
 const Explore = () => {
   return (
-    <div className="my-8 max-w-[70%] mx-auto ">
+    <div className="my-8 md:max-w-[70%] max-w-[90%] mx-auto ">
       <h1 className="text-center text-5xl jakarta-font-bold text-[#2e332e] my-2 ">
         Explore About Us
       </h1>

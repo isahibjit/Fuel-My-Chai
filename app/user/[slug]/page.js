@@ -1,13 +1,27 @@
+"use client"
 // app/user/[slug]/page.js
 
 import SupporterCard from "@/components/SupporterCard";
 import { IoQrCodeOutline } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { useSession } from "next-auth/react";
+import { use } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-const User = async ({ params }) => {
-  const slug = params.slug;
-
+const User =  ({ params }) => {
+  const {slug }= use(params);
+  const {data : session, status} = useSession()
+  const router = useRouter()
+  useEffect(() => {
+    if(status === "loading") return 
+    if(!session){
+      router.push("/")
+    }
+    
+  }, [status,session,router])
+  
   return (
     <div className="max-w-[70%] min-h-[70vh] mx-auto ">
       <div className=" my-12 relative">
@@ -18,7 +32,7 @@ const User = async ({ params }) => {
         />
         <div className="absolute left-[44%] -bottom-[40%] ">
           <img
-            src="/Creators Image/girl 3.jpg"
+            src={session?.user?.image}
             alt="profile image"
             className="rounded-full profile-spin  ring-2 ring-yellow-500 w-[150px] h-[150px] object-cover"
           />

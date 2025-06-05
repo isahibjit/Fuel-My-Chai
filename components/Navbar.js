@@ -2,11 +2,12 @@
 import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-
+import { signOut, useSession } from "next-auth/react";
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
-
+  const { data: session, status } = useSession();
+  console.log(session);
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -52,12 +53,23 @@ const Navbar = () => {
                 <Link href="/creators">Creators</Link>
               </li>
               <li>
-                <Link
-                  href="/login"
-                  className="text-xl font-medium py-2 px-4 rounded-lg hover:bg-[#99ec91]"
-                >
-                  Log in
-                </Link>
+                {session?.user ? (
+                  <button>
+                    <img
+                      src={session.user.image}
+                      alt="profile image"
+                      width={50}
+                      className="rounded-full hover:scale-105 transition-all duration-200"
+                    />
+                  </button>
+                ) : (
+                  <Link
+                    href="/login"
+                    className="text-xl font-medium py-2 px-4 rounded-lg hover:bg-[#99ec91]"
+                  >
+                    Log in
+                  </Link>
+                )}
               </li>
             </ul>
           </div>
@@ -74,9 +86,68 @@ const Navbar = () => {
             <Link href="/creators">Creators</Link>
           </li>
           <li className="text-xl  font-bold ">
-            <Link href="/login" className="btn-primary">
-              Log in
-            </Link>
+            {session?.user ? (
+              <div className="group relative inline-block">
+                <button>
+                  <img
+                    src={session.user.image}
+                    alt="profile image"
+                    width={50}
+                    className="rounded-full hover:scale-105 transition-all duration-200"
+                  />
+                </button>
+                <div
+                  id="dropdown"
+                  className="z-10  hidden  group-hover:block absolute -right-[40px] top-[50px]  bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700"
+                >
+                  <ul
+                    className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                    aria-labelledby="dropdownDefaultButton"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Settings
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Earnings
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                      onClick={()=>signOut()}
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Sign out
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <Link
+                href="/login"
+                className="text-xl font-medium py-2 px-4 rounded-lg hover:bg-[#99ec91]"
+              >
+                Log in
+              </Link>
+            )}
           </li>
         </ul>
       </nav>

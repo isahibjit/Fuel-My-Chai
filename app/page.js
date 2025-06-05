@@ -1,9 +1,13 @@
+"use client";
 import Image from "next/image";
 import { CiMoneyBill } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
 import { FaPeopleGroup } from "react-icons/fa6";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
+
+
   return (
     <div className="min-h-[75vh] max-w-[80%] mx-auto">
       <div className="flex my-12 lg:flex-row flex-col  lg:gap-12 gap-8  justify-around items-center ">
@@ -85,7 +89,8 @@ export default function Home() {
               alt=""
             />
             <p className="mt-4 mb-2 font-medium text-xl">
-             "Fuel My Chai has helped me build a community around my art. The direct support is invaluable."
+              "Fuel My Chai has helped me build a community around my art. The
+              direct support is invaluable."
             </p>
             <p className="text-[#5C738A] text-lg">Olivia, Writer</p>
           </div>
