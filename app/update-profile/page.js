@@ -1,4 +1,5 @@
 "use client"
+import { updateProfile } from "@/actions/userActions";
 import React, { useState } from "react";
 
 const UpdateProfile = () => {
@@ -25,7 +26,7 @@ const UpdateProfile = () => {
         <h1 className="text-3xl text-center my-4 font-medium  manrope-font">Welcome to your Dashboard</h1>
     <div className="flex justify-center items-center h-[72vh] px-4">
       <form
-        onSubmit={handleSubmit}
+        action={handleSubmit}
         className="flex flex-col my-12 gap-4 p-6 border shadow-lg rounded-xl w-full max-w-2xl"
         >
         <label htmlFor="name" className="text-xl font-medium jakarta-font">
